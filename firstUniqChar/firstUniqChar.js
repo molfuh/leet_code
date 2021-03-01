@@ -18,7 +18,12 @@ var firstUniqChar = function(s) {
     if (obj[letter] === undefined) {
       obj[letter] = i;
     } else {
-      delete obj[letter];
+      obj[letter] = null;
+    }
+  }
+  for (let key in obj) {
+    if (obj[key] === null) {
+      delete obj[key];
     }
   }
   return Object.values(obj).length > 0 ? Math.min(...Object.values(obj)) : -1;
@@ -34,6 +39,10 @@ var firstUniqChar = function(s) {
 //   // return 2.
 
 //   var s = ""
+//   console.log(firstUniqChar(s));
+//   // return -1.
+
+//   var s = "aadadaad";
 //   console.log(firstUniqChar(s));
 //   // return -1.
 // })();
