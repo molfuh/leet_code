@@ -21,11 +21,10 @@ var firstUniqChar = function(s) {
       delete obj[letter];
     }
   }
-  return Math.min(...Object.values(obj));
+  return Object.values(obj).length > 0 ? Math.min(...Object.values(obj)) : -1;
 };
 
 // (() => {
-
 //   var s = "leetcode"
 //   console.log(firstUniqChar(s));
 //   // return 0.
@@ -33,4 +32,8 @@ var firstUniqChar = function(s) {
 //   var s = "loveleetcode"
 //   console.log(firstUniqChar(s));
 //   // return 2.
+
+//   var s = ""
+//   console.log(firstUniqChar(s));
+//   // return -1.
 // })();
