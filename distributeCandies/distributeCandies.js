@@ -15,11 +15,11 @@ var distributeCandies = function(candyType) {
   }
 };
 
-(() => {
-  var candyType = [1,1,2,2,3,3];
-  console.log(distributeCandies(candyType));
-  candyType = [1,1,2,3];
-  console.log(distributeCandies(candyType));
-  candyType = [6,6,6,6];
-  console.log(distributeCandies(candyType));
-})();
+// (() => {
+//   var candyType = [1,1,2,2,3,3];
+//   console.log(distributeCandies(candyType));
+//   candyType = [1,1,2,3];
+//   console.log(distributeCandies(candyType));
+//   candyType = [6,6,6,6];
+//   console.log(distributeCandies(candyType));
+// })();
