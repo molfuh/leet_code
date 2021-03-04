@@ -10,9 +10,12 @@ var sumArray = function(arr) {
       //max var is current num
       max = sub + arr[i];
     }
+    //check if current element is greater than current max
     if (max < arr[i]) {
+      //if so, update max
       max = arr[i];
     }
+    //regardless, always change new sub array
     sub = sub + arr[i];
   }
   //return max
