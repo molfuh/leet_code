@@ -1,17 +1,21 @@
 var sumArray = function(arr) {
-  //find max value from input arr
-  let max = Math.max(...arr);
-  //loop through array
-  for (var i = 0; i < arr.length - 1; i++) {
-    //add nums from i to j
-    for (var j = i + 1; j < arr.length; j++) {
-      let sum = arr[i] + arr[j];
-      if (sum > max) {
-        max = sum;
-      }
+  //current subarray - first elem of arr
+  let sub = arr[0];
+  //create max var
+  let max = sub;
+  //iterate through arr
+  for (var i = 1; i < arr.length; i++) {
+    //if current num > sum of num + sum of previous subarray
+    if (sub < sub + arr[i]) {
+      //max var is current num
+      max = sub + arr[i];
     }
-    //if added value is greater than determined max, update it
+    if (max < arr[i]) {
+      max = arr[i];
+    }
+    sub = sub + arr[i];
   }
+  //return max
   return max;
 };
 
