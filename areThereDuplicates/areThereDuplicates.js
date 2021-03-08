@@ -10,21 +10,21 @@
 //   return false;
 // }
 
-// function areThereDuplicates(...args) {
-//   args.sort((a, b) => a > b);
-//   let start = 0;
-//   // let end = args.length - 1;
-//   let next = 1;
-//   // while (start < end) {
-//   while (next < args.length) {
-//     if (args[start] === args[next]) {
-//       return true;
-//     }
-//     start++;
-//     next++;
-//   }
-//   return false;
-// }
+function areThereDuplicates(...args) {
+  args.sort((a, b) => a > b);
+  let start = 0;
+  // let end = args.length - 1;
+  let next = 1;
+  // while (start < end) {
+  while (next < args.length) {
+    if (args[start] === args[next]) {
+      return true;
+    }
+    start++;
+    next++;
+  }
+  return false;
+}
 
 // function areThereDuplicates() {
 
