@@ -26,19 +26,37 @@ class SinglyLinkedList {
   }
 
   pop() {
-    let current = this.head;
-    let old, newest;
-    while (current.next) {
-      current = current.next;
-      if (current.next) {
-        newest = current;
-      }
+    if (this.head === null) {
+      return undefined;
     }
-    old = current;
-    newest.next = null;
-    this.tail = newest;
+    let current = this.head;
+    let newTail = current;
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null; // severs the arrow/pointer
     this.length--;
-    return old.value;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
+
+    // let current = this.head;
+    // let old, newest;
+    // while (current.next) {
+    //   current = current.next;
+    //   if (current.next) {
+    //     newest = current;
+    //   }
+    // }
+    // old = current;
+    // newest.next = null;
+    // this.tail = newest;
+    // this.length--;
+    // return old.value;
   }
 }
 
@@ -47,7 +65,7 @@ class SinglyLinkedList {
   list.push(0);
   list.push(1);
   list.push(2);
-  // console.log(list.tail.val); //should be 2
+  console.log(list.tail.val); //should be 2
   list.pop();
-  // console.log(list.tail.val); //should be 1
+  console.log(list.tail.val); //should be 1
 })();
