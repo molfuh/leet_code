@@ -70,9 +70,11 @@ class SinglyLinkedList {
     return current;
   }
 
-  unshift() {
+  unshift(val) {
     let current = this.head;
-    this.head = current.next;
+    let newHead = new Node(val);
+    this.head = newHead;
+    newHead.next = current.next;
     return current;
   }
 }
@@ -91,6 +93,6 @@ class SinglyLinkedList {
   // list.shift();
   // console.log(list.head.val); //should be 2
   console.log(list.head.val) //should be 0
-  list.unshift();
-  console.log(list.head.val) //should be 1
+  list.unshift(-1);
+  console.log(list.head.val) //should be -1
 })();
