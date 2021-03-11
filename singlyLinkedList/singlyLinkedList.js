@@ -24,6 +24,22 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  pop() {
+    let current = this.head;
+    let old, newest;
+    while (current.next) {
+      current = current.next;
+      if (current.next) {
+        newest = current;
+      }
+    }
+    old = current;
+    newest.next = null;
+    this.tail = newest;
+    this.length--;
+    return old.value;
+  }
 }
 
 (() => {
@@ -31,5 +47,7 @@ class SinglyLinkedList {
   list.push(0);
   list.push(1);
   list.push(2);
-  console.log(list);
+  // console.log(list.tail.val); //should be 2
+  list.pop();
+  // console.log(list.tail.val); //should be 1
 })();
