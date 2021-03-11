@@ -16,9 +16,13 @@ class SinglyLinkedList {
     let node = new Node(val);
     if (this.head === null) {
       this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
     }
-    this.tail = node;
     this.length++;
+    return this;
   }
 }
 
@@ -26,5 +30,6 @@ class SinglyLinkedList {
   let list = new SinglyLinkedList();
   list.push(0);
   list.push(1);
+  list.push(2);
   console.log(list);
 })();
