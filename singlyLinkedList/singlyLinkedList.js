@@ -69,6 +69,12 @@ class SinglyLinkedList {
     //assign variables to what you will be returning - clarifies
     return current;
   }
+
+  unshift() {
+    let current = this.head;
+    this.head = current.next;
+    return current;
+  }
 }
 
 (() => {
@@ -77,11 +83,14 @@ class SinglyLinkedList {
   list.push(1);
   list.push(2);
   // console.log(list.tail.val); //should be 2
-  list.pop();
+  // list.pop();
   // console.log(list.tail.val); //should be 1
   // console.log(list.head.val); //should be 0
-  list.shift();
+  // list.shift();
   // console.log(list.head.val); //should be 1
-  list.shift();
+  // list.shift();
   // console.log(list.head.val); //should be 2
+  console.log(list.head.val) //should be 0
+  list.unshift();
+  console.log(list.head.val) //should be 1
 })();
