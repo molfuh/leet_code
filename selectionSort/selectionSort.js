@@ -15,7 +15,5 @@ function selectionSort(arr) {
 //O(n) space complexity
 
 (() => {
-                                        // i  
     console.log(selectionSort([5, 4, 3, 2, 1]));
-                                        //    s
 })();
