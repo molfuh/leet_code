@@ -75,6 +75,7 @@ class SinglyLinkedList {
     let newHead = new Node(val);
     this.head = newHead;
     newHead.next = current.next;
+    this.length++;
     return current;
   }
 }

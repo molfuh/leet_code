@@ -1,24 +1,5 @@
 var canVisitAllRooms = function(rooms) {
-  let cycle = {};
-  var recursion = (currentRoom, roomNum) => {
-    for (let j = 0; j < currentRoom.length; j++) {
-      let key = currentRoom[j];
-      if (key === currentRoom) {
-        return;
-      }
-      if (cycle[roomNum]) {
-        return false;
-      }
-      cycle[roomNum] = true;
-      recursion(rooms[key], key);
-    }
-    return;
-  }
-  let result = recursion(rooms[0], 0);
-  if (result === false || Object.values(cycle).indexOf(false)) {
-    return false;
-  }
-  return true;
+
 };
 
 (() => {
@@ -44,3 +25,28 @@ var canVisitAllRooms = function(rooms) {
       //repeat from line 9 and on
       //iterate through this room
 //return false
+
+/*
+var canVisitAllRooms = function(rooms) {
+  let cycle = {};
+  var recursion = (currentRoom, roomNum) => {
+    for (let j = 0; j < currentRoom.length; j++) {
+      let key = currentRoom[j];
+      if (key === currentRoom) {
+        return;
+      }
+      if (cycle[roomNum]) {
+        return false;
+      }
+      cycle[roomNum] = true;
+      recursion(rooms[key], key);
+    }
+    return;
+  }
+  let result = recursion(rooms[0], 0);
+  if (result === false || Object.values(cycle).indexOf(false)) {
+    return false;
+  }
+  return true;
+};
+*/
