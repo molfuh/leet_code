@@ -24,6 +24,19 @@ var canVisitAllRooms = function(rooms) {
   console.log(canVisitAllRooms([[1],[2],[],[3]])); //false
 })();
 
+
+// Solution from leetcode:
+  //At the beginning, we have a todo list "stack" of keys to use.
+  //'seen' represents at some point we have entered this room.
+    // While we have keys...
+      // Get the next key 'node'
+        // For every key in room # 'node'...
+          // ...that hasn't been used yet
+            // mark that we've entered the room
+            // add the key to the todo list
+  // if any room hasn't been visited, return false
+
+
 //I: array of arrays
 //O: bool - can visit every room
 
