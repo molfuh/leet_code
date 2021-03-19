@@ -37,6 +37,8 @@ var canVisitAllRooms = function(rooms) {
   // if any room hasn't been visited, return false
 
 
+  //Can also do stack? Maintains order.
+
 //I: array of arrays
 //O: bool - can visit every room
 
