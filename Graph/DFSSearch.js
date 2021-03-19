@@ -33,7 +33,7 @@ class Graph {
       if (!vertex) return;
       visited[vertex] = true;
       result.push(vertex);
-      adjacencyList[vertex].forEach((elem) => {
+      adjacencyList[vertex].forEach(elem => {
         if (!visited[elem]) return recurseDFS(elem);
       })
     })(start);
