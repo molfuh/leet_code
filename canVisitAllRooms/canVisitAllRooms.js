@@ -1,5 +1,21 @@
 var canVisitAllRooms = function(rooms) {
-
+  let visited = {};
+  (function recursion(room) {
+    if (visited[room]) {
+      return;
+    }
+    if (rooms.length === Object.keys(visited)) {
+      return;
+    }
+    visited[room] = true;
+    rooms[room].forEach((key) => {
+      recursion(key);
+    })
+  })(0);
+  if (rooms.length !== Object.keys(visited).length) {
+    return false;
+  }
+  return true;
 };
 
 (() => {
